@@ -3,8 +3,8 @@
 # An oh-my-zsh theme.
 #
 # Author:      archer308
-# Version:     x.xx
-# Last Update: 2014-06-04
+# Version:     1.20
+# Last Update: 2014-06-15
 #
 # Credits:
 # Heavily based on two other themes, "robbyrussell" and "muse".
