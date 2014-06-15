@@ -3,8 +3,8 @@
 # An oh-my-zsh theme.
 #
 # Author:      archer308
-# Version:     1.00
-# Last Update: 2014-03-08
+# Version:     x.xx
+# Last Update: 2014-06-04
 #
 # Credits:
 # Heavily based on two other themes, "robbyrussell" and "muse".
@@ -23,8 +23,34 @@
 
 
 # kanjizsh prompt:
-local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ %s)"
+local ret_status="%(?:%{$fg_bold[green]%}正 :%{$fg_bold[red]%}違 %s)"
+#       1            2                     3               4                                   5                                       6 7
 PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} $(git_prompt_status) % %{$reset_color%}'
+#
+# 1 Return status of last command.
+#   Ex:  正
+#
+# 2 Precise time of day?  But this appears to do nothing.
+#   Ex:  
+#   References:
+#   http://railscasts.com/episodes/308-oh-my-zsh?view=comments
+#   http://www.nparikh.org/unix/prompt.php
+#
+# 3 Trailing component of current working directory.
+#   Ex:  mycurrentdir
+#   Reference:
+#   http://www.nparikh.org/unix/prompt.php
+#
+# 4 Git prompt info.
+#   Ex:  git:(devel)
+#
+# 5 Git prompt status.
+#   Ex:  汚 異加
+#
+# 6 ???
+#
+# 7 Reset the terminal colors back to defaults?
+#
 
 
 
@@ -56,7 +82,9 @@ ZSH_THEME_GIT_PROMPT_MODIFIED="%{$FG[166]%}変%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DELETED="%{$FG[160]%}削%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_RENAMED="%{$FG[220]%}名%{$reset_color%}"
 # 違？異？浮？
-ZSH_THEME_GIT_PROMPT_UNMERGED="%{$FG[082]%}異%{$reset_color%}"
+# TODO: Figure out why the first character is bold if we do not have this extra %{$reset_color%} here.  Guess that's not a bad thing though...
+#ZSH_THEME_GIT_PROMPT_UNMERGED="%{$reset_color%}%{$FG[177]%}異%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_UNMERGED="%{$FG[177]%}異%{$reset_color%}"
 # 漏？余？除？外？置？別？監視？浮？漂？
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$FG[190]%}浮%{$reset_color%}"
 
